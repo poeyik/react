@@ -1,5 +1,8 @@
 # 리액트
 실행
-``` npm install ```
+
+```bash
+npm install 
+```
 
 > npm run dev
