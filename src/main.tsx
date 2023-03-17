@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import { BrowserRouter, createBrowserRouter, RouterProvider } from 'react-router-dom'
 import App from './App'
 import './index.css'
-import AGGird from './pages/AGGrid'
+import AGGrid from './pages/AGGrid'
 import Leaflet from './pages/Leaflet'
 import MainPage from './pages/MainPage'
 import NotFound from './pages/NotFound'
@@ -28,8 +28,8 @@ const router = createBrowserRouter([
         element: <Leaflet/>,
       },
       {
-        path: "aggird",
-        element: <AGGird/>
+        path: "aggrid",
+        element: <AGGrid/>
       }
     ]
   },
