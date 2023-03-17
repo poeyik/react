@@ -3,6 +3,7 @@
 
 ```bash
 npm install 
+const a = [];
 ```
 
 ```javascript
