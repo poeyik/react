@@ -5,4 +5,8 @@
 npm install 
 ```
 
+```javascript
+const a = [];
+```
+
 > npm run dev
