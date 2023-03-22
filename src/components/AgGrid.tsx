@@ -22,7 +22,6 @@ export default function AgGrid(props: any) {
 		const pageSize = gridApi.paginationGetPageSize();
 		const startIndex = currentPage * pageSize;
 		const endIndex = (currentPage + 1) * pageSize;
-		console.log(currentPage)
 		setRowData(props.rowData.slice(startIndex, endIndex));
 	}
   
