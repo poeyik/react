@@ -2,7 +2,7 @@ import { makeAutoObservable, runInAction } from "mobx";
 
 
 class AggridStore {
-    viewList = [];
+    viewList: Array<Object> = [];
 
     constructor() {
         makeAutoObservable(this);
@@ -10,7 +10,7 @@ class AggridStore {
 
     changeViewList = () => {
         runInAction(() => {
-            this.viewList.push("one");
+            this.viewList.push({name: "one"});
         })
     }
 }
