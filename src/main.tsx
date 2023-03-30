@@ -4,6 +4,7 @@ import { BrowserRouter, createBrowserRouter, RouterProvider } from 'react-router
 import App from './App'
 import './index.css'
 import AGGridPage from './pages/AGGridPage'
+import Crud from './pages/Crud'
 import Leaflet from './pages/Leaflet'
 import MainPage from './pages/MainPage'
 import NotFound from './pages/NotFound'
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
       {
         path: "aggrid",
         element: <AGGridPage/>
+      },
+      {
+        path: "crud",
+        element: <Crud/>
       }
     ]
   },

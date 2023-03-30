@@ -8,6 +8,7 @@ export default function MainPage() {
             <Link to={"/aggird"}>AGGird</Link>
             <Link to={"/leaflet"}>지도</Link>
             <Link to={"/terminal"}>Terminal</Link>
+            <Link to={"/crud"}>CRUD</Link>
         </div>
     )
 }
