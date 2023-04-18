@@ -11,6 +11,7 @@ import NotFound from './pages/NotFound'
 import Terminal from './pages/Terminal'
 import { RecoilRoot } from 'recoil'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import Todo from './pages/Todo'
 
 const queryClient = new QueryClient();
 
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
       {
         path: "crud",
         element: <Crud/>
+      },
+      {
+        path: "todo",
+        element: <Todo/>
       }
     ]
   },
