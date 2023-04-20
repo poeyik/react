@@ -2,11 +2,15 @@ import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import axios from 'axios';
 import { useState } from 'react';
 import { SERVER_URL } from '../config';
+import { useCreateTodo, useDeleteTodo, useUpdateTodo } from '../hooks/services/mutations/useTodosMutation';
 
 export default function Todo() {
 	const [ todo, setTodo ] = useState<Object>();
 	const [ editTodo, setEditTodo ] = useState<string>();
 	const [ editable, setEditable ] = useState<number>();
+	const createTodoMutation = useCreateTodo();
+	const updateTodoMutation = useUpdateTodo();
+	const deleteTodoMutation = useDeleteTodo();
 
 	const queryClient = useQueryClient();
 
@@ -23,14 +27,6 @@ export default function Todo() {
 		}
 	})
 	
-	const mutation = useMutation({
-		mutationFn: (todo: any) => {
-			return axios.post(`${SERVER_URL}/todo/create`, todo)
-		},
-		onSuccess: () => {
-			queryClient.invalidateQueries({queryKey: ['todo']})
-		}
-	})
 
 	const changeTodo = (e: React.ChangeEvent<HTMLInputElement>) => {
 		e.preventDefault();
@@ -47,17 +43,16 @@ export default function Todo() {
 	}
 
 	const createTodo = async() => {
-		mutation.mutate(todo);
+		createTodoMutation.mutate(todo);
 	}
 
 	const updateTodo = async(id: number) => {
 		setEditable(0);
-		await axios.put(`${SERVER_URL}/todo/${id}`, {content: editTodo});
+		updateTodoMutation.mutate({id, editTodo});
 	}
 
 	const deleteTodo = async(id: number) => {
-		await axios.delete(`${SERVER_URL}/todo/${id}`);
-
+		deleteTodoMutation.mutate(id);
 	}
 
 
