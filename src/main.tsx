@@ -12,6 +12,8 @@ import Terminal from './pages/Terminal'
 import { RecoilRoot } from 'recoil'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import Todo from './pages/Todo'
+import Tree from './pages/Tree'
+import InnoTemplate from './pages/InnoTemplate'
 
 const queryClient = new QueryClient();
 
@@ -44,6 +46,14 @@ const router = createBrowserRouter([
       {
         path: "todo",
         element: <Todo/>
+      },
+      {
+        path: "tree",
+        element: <Tree/>
+      },
+      {
+        path: "inno-template",
+        element: <InnoTemplate/>
       }
     ]
   },

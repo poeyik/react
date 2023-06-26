@@ -33,7 +33,7 @@ const columnDefs = [
     headername: "Make",
     field: 'make'
   },
-  { 
+  {
     headername: "Model",
     field: 'model' 
   },
