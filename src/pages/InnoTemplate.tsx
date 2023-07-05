@@ -8,6 +8,7 @@ import CustomDialog from "../components/CustomDialog";
 
 function InnoTemplate() {
   const [ isOpen, setIsOpen ] = useState(false);
+  const [ currentTab, setCurrentTab ] = useState<"Deployment"|"Service"|"Job"|"CronJob"|"Pod"|"StatefulSet"|"DaemonSet">("Deployment");
 
   const openCreateDeployment = () => {
     setIsOpen(true);
@@ -58,10 +59,23 @@ function InnoTemplate() {
       actionFn: () => {console.log("삭제")}
     }
   ]
+  
+  switch (currentTab) {
+    case "Deployment":
+      
+      break;
+    case "Service":
+
+      break;
+    default:
+      break;
+  }
 
   return(
     <div>
-      <CustomDialog open={isOpen} onClose={closeCreateDeployment} title={"Create Deployment"}></CustomDialog>
+      <CustomDialog open={isOpen} onClose={closeCreateDeployment} title={"Create Deployment"}>
+        안녕하세요
+      </CustomDialog>
       <ContentTemplate>
         <ContentTabs tabList={['Deployment', 'Pod']}></ContentTabs>
         <ContentTabPanel columnDefs={columnDefs} rowData={rowData} buttonList={buttons}></ContentTabPanel>
@@ -72,3 +86,9 @@ function InnoTemplate() {
 }
 
 export default InnoTemplate;
+
+const setting = [
+  {
+
+  }
+]
