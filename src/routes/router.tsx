@@ -9,6 +9,7 @@ import Crud from "../pages/Crud";
 import Todo from "../pages/Todo";
 import Tree from "../pages/Tree";
 import InnoTemplate from "../pages/InnoTemplate";
+import DragAndDrop from "../pages/DragAndDrop";
 
 export const router = createBrowserRouter([
   {
@@ -35,6 +36,10 @@ export const router = createBrowserRouter([
       {
         path: "crud",
         element: <Crud/>
+      },
+      {
+        path: "dnd",
+        element: <DragAndDrop/>
       },
       {
         path: "todo",

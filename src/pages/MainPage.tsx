@@ -8,6 +8,7 @@ export default function MainPage() {
             <Link to={"/leaflet"}>지도</Link>
             <Link to={"/terminal"}>Terminal</Link>
             <Link to={"/crud"}>CRUD</Link>
+            <Link to={"/dnd"}>DragAndDrop</Link>
             <Link to={"/todo"}>Todo</Link>
             <Link to={"/tree"}>TreeView</Link>
             <Link to={"/inno-template"}>InnoTemplate</Link>
