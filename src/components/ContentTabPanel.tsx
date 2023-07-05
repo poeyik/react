@@ -1,3 +1,4 @@
+import { TabPanel } from "@mui/lab";
 import AgGrid from "./AgGrid";
 import { Button } from "@mui/material";
 
@@ -21,10 +22,10 @@ export default function ContentTabPanel({ columnDefs, rowData, buttonList }: any
       {buttonList.map((button: any) => (
         renderButtonLine(button)
       ))}
-      <AgGrid
-        columnDefs={columnDefs}
-        rowData={rowData}
-      ></AgGrid>
+        <AgGrid
+          columnDefs={columnDefs}
+          rowData={rowData}
+        ></AgGrid>
     </>
   )
 }
