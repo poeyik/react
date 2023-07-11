@@ -3,8 +3,7 @@ import ContentTabs from "../components/ContentTabs";
 import ContentTabPanel from "../components/ContentTabPanel";
 import ContentDetail from "../components/ContentDetail";
 import { useState } from "react";
-import { Dialog, DialogActions, DialogContent, DialogTitle } from "@mui/material";
-import CustomDialog from "../components/CustomDialog";
+import PopUp from "../components/PopUp";
 
 function InnoTemplate() {
   const [ isOpen, setIsOpen ] = useState(false);
@@ -59,6 +58,11 @@ function InnoTemplate() {
       actionFn: () => {console.log("삭제")}
     }
   ]
+
+  const popupButtons = [
+    {name: "생성", actionFn: ()=>{}}, 
+    {name: "취소", actionFn: closeCreateDeployment}
+  ]
   
   switch (currentTab) {
     case "Deployment":
@@ -73,9 +77,9 @@ function InnoTemplate() {
 
   return(
     <div>
-      <CustomDialog open={isOpen} onClose={closeCreateDeployment} title={"Create Deployment"}>
-        안녕하세요
-      </CustomDialog>
+      <PopUp open={isOpen} onClose={closeCreateDeployment} title={"Create Deployment"} explain={"설명"} buttons={popupButtons}>
+        내용
+      </PopUp>
       <ContentTemplate>
         <ContentTabs tabList={['Deployment', 'Pod']}></ContentTabs>
         <ContentTabPanel columnDefs={columnDefs} rowData={rowData} buttonList={buttons}></ContentTabPanel>
